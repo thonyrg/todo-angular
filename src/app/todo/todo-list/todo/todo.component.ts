@@ -1,11 +1,20 @@
 import { Component, Input } from '@angular/core';
+import { trigger, state, transition, style, animate } from '@angular/animations';
 import { Todo } from './../todo.model';
 import { TodoService } from '../../../shared/services/todo.service';
 
 @Component({
     selector: 'todo',
     templateUrl: './todo.component.html',
-    styleUrls: ['./todo.component.scss']
+    styleUrls: ['./todo.component.scss'],
+    animations: [
+        trigger('fade', [
+            state('void', style({ opacity: 0 })),
+            transition('void => *', [
+                animate(500)
+            ])
+        ])
+    ]
 })
 
 export class TodoComponent {

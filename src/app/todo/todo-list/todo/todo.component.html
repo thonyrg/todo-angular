@@ -1,4 +1,4 @@
-<div class="todo">
+<div class="todo" @fade>
     <div [ngClass]="todo.isCompleted ? 'todo--completed_title' : ''">{{todo.title}}</div>
     <div [ngClass]="todo.isCompleted ? 'todo--completed_icon' : 'todo--incompleted_icon'">
         <i class="fa fa-check-circle" (click)="completeTodo()"></i>
