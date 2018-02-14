@@ -1,0 +1,10 @@
+<div class="todo">
+    <div [ngClass]="todo.isCompleted ? 'todo--completed_title' : ''">{{todo.title}}</div>
+    <div [ngClass]="todo.isCompleted ? 'todo--completed_icon' : 'todo--incompleted_icon'">
+        <i class="fa fa-check-circle" (click)="completeTodo()"></i>
+    </div>
+    <div Class="todo--delete_icon">
+        <i class="fa fa-trash-o" (click)="willDelete = !willDelete"></i>
+    </div>
+</div>
+<ng2-alert *ngIf="willDelete" [msg]="alertMsg" (confirmed)="getUserConfirmation($event)"></ng2-alert>
