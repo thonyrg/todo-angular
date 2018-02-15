@@ -9,6 +9,7 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { TodoService } from './shared/services/todo.service';
 import { TodoComponent } from './todo/todo-list/todo/todo.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import { TodoStatsComponent } from './todo/todo-stats/todo-stats.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     AddTodoComponent,
     TodoListComponent,
     TodoComponent,
-    AlertComponent
+    AlertComponent,
+    TodoStatsComponent
   ],
   imports: [
     BrowserModule,
