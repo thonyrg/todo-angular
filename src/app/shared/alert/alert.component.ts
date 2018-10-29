@@ -22,8 +22,8 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
 })
 
 export class AlertComponent {
-    @Input('msg') msg: string = 'Test';
-    @Output('confirmed') confirmed = new EventEmitter();
+    @Input() msg = 'Test';
+    @Output() confirmed = new EventEmitter();
 
     userChoice(choice: boolean) {
         this.confirmed.emit(choice);

@@ -4,7 +4,7 @@ import { Todo } from './../todo.model';
 import { TodoService } from '../../../shared/services/todo.service';
 
 @Component({
-    selector: 'todo',
+    selector: 'app-todo',
     templateUrl: './todo.component.html',
     styleUrls: ['./todo.component.scss'],
     animations: [
@@ -18,10 +18,10 @@ import { TodoService } from '../../../shared/services/todo.service';
 })
 
 export class TodoComponent {
-    @Input('todo') todo: Todo;
-    @Input('idx') idx: number;
-    willDelete: boolean = false;
-    alertMsg: string = 'Do you really want to delete this ToDo?';
+    @Input() todo: Todo;
+    @Input() idx: number;
+    willDelete = false;
+    alertMsg = 'Do you really want to delete this ToDo?';
 
     constructor(private service: TodoService) {}
 

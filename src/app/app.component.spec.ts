@@ -1,11 +1,28 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo-list/todo/todo.component';
+import { TodoStatsComponent } from './todo/todo-stats/todo-stats.component';
+import { AddTodoComponent } from './todo/add-todo/add-todo.component';
+import { HeaderComponent } from './header/header.component';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { AlertComponent } from './shared/alert/alert.component';
+import { TodoService } from './shared/services/todo.service';
+
+export class TodoServiceStub {}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TodoComponent,
+        AlertComponent,
+        HeaderComponent,
+        AddTodoComponent,
+        TodoListComponent,
+        TodoStatsComponent
       ],
+      providers: [{ provide: TodoService, useClass: TodoServiceStub}]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -17,11 +34,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
   }));
 });
