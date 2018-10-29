@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'ng2-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
@@ -16,6 +17,7 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
             ])
         ])
     ],
+    // tslint:disable-next-line:use-host-property-decorator
     host: {
       '[@fadeInOut]': 'true'
     }

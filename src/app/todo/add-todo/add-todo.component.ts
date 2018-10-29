@@ -12,11 +12,9 @@ export class AddTodoComponent {
     constructor(private service: TodoService) {}
 
     addTodo(e) {
-        if (e.keyCode === 13) {
-            if (e.target.value.trim() !== '') {
-                this.service.addTodo(e.target.value);
-                e.target.value = '';
-            }
+        if (e.target.value.trim() !== '') {
+            this.service.addTodo(e.target.value);
+            e.target.value = '';
         }
     }
 }
